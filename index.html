@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/img/icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Hangman</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div id="welcome_screen">
+                <h1>Welcome!</h1>
+                <div class="welcome_image">
+                    <img src="img/logo.png" alt="">
+                </div>
+                <div class="form">
+                    <input type="text" class="hidden_word" placeholder="Make up a word" value="">
+                    <input type="text" class="prompt_to_word" placeholder="Prompt">
+                    <button class="input">START</button>
+                </div>
+            </div>
+            <div id="game_screen">
+                <div class="task">
+                    <div class="word"></div>
+                    <div class="progress">
+                        <canvas id="canvas" width="240" height="290"></canvas>
+                    </div>
+                </div>
+                <div class="letters"></div>
+            </div>
+            <div id="success_finish_screen">
+                <h2>Congratulation! You won!</h2>
+                <div class="finish_image">
+                    <img src="img/is_not_hanged.png" alt="Image">
+                </div>
+                <button class="try">Play Again</button>
+            </div>
+            <div id="loose_finish_screen">
+                <h2>You are hanged!</h2>
+                <div class="finish_image">
+                    <img src="img/is_hanged.png" alt="Image">
+                </div>
+                <button class="try">Try Again</button>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+    <script src="js/canvas.js"></script>
+</body>
+</html>

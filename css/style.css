@@ -1,0 +1,202 @@
+@import url('reset.css');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('../img/background.png');
+    color: gray;
+}
+
+h1, h2 {
+    color: #333;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3.5rem;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+input, button {
+    background-color: transparent;
+    border: 2px solid gray;
+    display: block;
+    text-align: center;
+    height: 2rem;
+    width: 15rem;
+    margin-bottom: .5rem;
+}
+
+button {
+    height: 2.2rem;
+}
+
+button:hover {
+    background-color: transparent;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: stretch;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100vh;
+}
+
+.container {
+    position: relative;
+    display: block;
+    min-height: 75vh;
+    width: 100%;
+}
+
+#welcome_screen,
+#game_screen,
+#success_finish_screen,
+#loose_finish_screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: stretch;
+    align-items: center;
+    width: 100%;
+    opacity: 0;
+    z-index: 0;
+    transition: opacity 1s ease;
+}
+
+#welcome_screen {
+    opacity: 1;
+    z-index: 10;
+}
+
+#canvas {display: inline-block;
+    position: relative;
+    top: 20%;
+}
+
+.welcome_image {
+    margin-bottom: 2rem;
+    width: 15rem;
+}
+
+.welcome_image img {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    object-fit: cover;
+}
+
+.task, .word, .letters, .progress {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: stretch;
+    align-items: center;
+}
+
+.task,
+.word,
+.progress {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.form {
+    display: inline-block;
+    position: relative;
+}
+
+.letter_word {
+    border: 3px solid gray;
+    border-radius: 5px;
+    display: inline-block;
+    height: 2.5rem;
+    width: 2.5rem;
+    margin-bottom: 1rem;
+    margin-left: 0.125rem;
+    margin-right: 0.125rem;
+    text-align: center;
+}
+
+.letter_word span.letter_span {
+    display: inline-block;
+    font-size: 2rem;
+    line-height: 2.2rem;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: opacity .5s ease;
+}
+
+p.prompt {
+    font-size: 1.25rem;
+    width: 100%;
+    text-align: center;
+}
+
+p.prompt span {
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.letter {
+    display: inline-block;
+    cursor: pointer;
+    border: 2px solid gray;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    text-align: center;
+    line-height: 1.75rem;
+    height: 2rem;
+    width: 2rem;
+    margin: 0.125rem;
+    transition: all 1s ease;
+}
+
+#success_finish_screen .try {
+    color: green;
+    border: 2px solid green;
+}
+
+#loose_finish_screen .try {
+    color: red;
+    border: 2px solid red;
+}
+
+.finish_image {
+    margin-bottom: 2rem;
+}
+
+.error {border-color: red; background-color: red; color: white; cursor: default;}
+
+.true {border-color: green; background-color: green; color: white; cursor: default;}
+
+@media screen and (max-width: 520px){
+    .letter_word,
+    .letter_word span.letter_span {
+        height: 2rem;
+        width: 2rem;
+    }
+
+    .letter_word span.letter_span {
+        font-size: 1.5rem;
+        line-height: 1.75rem;
+        height: 90%;
+        width: 90%;
+    }
+}
